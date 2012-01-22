@@ -3,7 +3,7 @@
 	public class SpaceHub {
 		var capacity:int;
 		var freightCapable:Boolean = false;
-		var enployees:int;
+		var employees:int;
 		public function SpaceHub() {
 			
 		}
