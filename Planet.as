@@ -62,7 +62,7 @@
 		}
 		
 		public function openInfoMenu() {
-			addChild(new InfoMenu(this));
+			//addChild(new InfoMenu(this));
 		}
 		
 
