@@ -7,10 +7,10 @@
 	
 	public class Planet extends MovieClip {
 		var population:int;
-		var spaceHub:SpaceHub;
+		public var spaceHub:SpaceHub;
 		var color:Color;
 		public var pName;
-		
+		var infomenu:PlanetInfoMenu;
 		
 		public function Planet(myName:String) {
 			this.pName = myName;
@@ -47,7 +47,7 @@
 			if (this.spaceHub != null) {
 				removeSpaceHub();
 			} else {
-				addSpaceHub(new SpaceHub());
+				addSpaceHub(new SpaceHub(50, 2));
 			}
 		}
 		
@@ -62,6 +62,15 @@
 		}
 		
 		public function openInfoMenu() {
+			infomenu = new PlanetInfoMenu(this);
+			infomenu.x = stage.stageWidth/2;
+			infomenu.y = stage.stageHeight/2;
+			stage.addChild(infomenu);
+			infomenu.closingX.addEventListener(MouseEvent.CLICK, function() { 
+											   stage.removeChild(infomenu); 
+											   infomenu = null;
+											   });
+			
 			//addChild(new InfoMenu(this));
 		}
 		
