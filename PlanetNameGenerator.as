@@ -46,6 +46,7 @@
 			"a",
 			"ia",
 			"ara",
+			"ana",
 			"ari",
 			"ion",
 			"on",

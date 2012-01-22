@@ -14,8 +14,7 @@
 		
 		public function Planet(myName:String) {
 			this.pName = myName;
-			this.planetName.nameBox.text = pName;
-			this.planetName.nameBox.alpha = 0;
+			planetName.nameBox.text = pName;
 			this.addEventListener(MouseEvent.CLICK, clicked);
 			this.addEventListener(MouseEvent.MOUSE_OVER, mouseover);
 			this.addEventListener(MouseEvent.MOUSE_OUT, mouseout);
@@ -41,6 +40,10 @@
 		
 		public function clicked(me:MouseEvent) {
 			trace("Oh dearie me, I have been clicked!");
+			this.openInfoMenu();
+		}
+		
+		public function toggleSpaceport() {
 			if (this.spaceHub != null) {
 				removeSpaceHub();
 			} else {
@@ -49,11 +52,17 @@
 		}
 		
 		public function mouseover(me:MouseEvent) {
-			this.planetName.alpha = 1;
-			trace("AW MAN DAT'S " + this.planetName.nameBox.text);
+			//this.planetName.alpha = 1;
+			trace("AW MAN DAT'S " + planetName.nameBox.text);
+			//planetName.nameBox.text = pName;
 		}
 		public function mouseout(me:MouseEvent) {
-			this.planetName.alpha = 0;
+			//this.planetName.alpha = 0;
+			//planetName.nameBox.text = pName;
+		}
+		
+		public function openInfoMenu() {
+			addChild(new InfoMenu(this));
 		}
 		
 
