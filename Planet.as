@@ -18,7 +18,7 @@
 			
 			this.scaleX = .25;
 			this.scaleY = .25;
-			this.planetSphere.rotation = Math.random()*360;;
+			this.planetSphere.rotation = (Math.random()*300)+30;
 			this.population = Math.floor(Math.random()*1293)*Math.floor(Math.random()*4321)*2382;
 			this.addEventListener(MouseEvent.CLICK, clicked);
 			this.addEventListener(MouseEvent.MOUSE_OVER, mouseover);

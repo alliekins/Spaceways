@@ -14,6 +14,7 @@
 			drawRoute(false);
 			this.addEventListener(MouseEvent.MOUSE_OVER, function() { drawRoute(true) } );
 			this.addEventListener(MouseEvent.MOUSE_OUT, function() { drawRoute(false) } );
+			this.addEventListener(MouseEvent.CLICK, clicked);
 		}
 		
 		public function drawRoute(isMouseover:Boolean) {
@@ -43,6 +44,11 @@
 			trace("DRAWING SHITS");
 			g.lineTo(planets[1].getCenter().x, planets[1].getCenter().y);
 			g.lineTo(planets[0].getCenter().x, planets[0].getCenter().y);
+		}
+		
+		public function clicked(me:MouseEvent) {
+			//open route info pane
+			
 		}
 
 	}
