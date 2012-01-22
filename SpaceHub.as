@@ -7,15 +7,28 @@
 		static var EMPLOYEE_EFFICIENCY:int = 10; //process this many packages a month
 		static var BASE_HUB_COST = 100; //base op cost of a hub
 		public static var NEW_HUB_COST = 1000; //cost to open a new hub
+		public static var EMP_SEVERANCE = 25;
 		
 		var capacity:int; //capacity of the facility
 		var freightCapable:Boolean = false; //can handle freight?
 		var employees:int; //num employees
 		var packages:Array = new Array(); //packages currently in the facility
+		public var rejected:int = 0;
+		
 		public function SpaceHub(cap:int, emp:int) {
 			this.capacity = cap;
 			this.employees = emp;
 		}
+		
+		public function addPackage(p:Package) {
+			if (freeSpace() > p.getSize()) {
+				packages.push(p);
+			} else {
+				//trace("package rejected!");
+				rejected++;
+			}
+		}
+		
 		
 		public function isFreightCapable():Boolean {
 			return freightCapable;
@@ -40,7 +53,7 @@
 		public function costToClose():int {
 			//cost to close the hub. Severance for employees makes per-emp cost higher
 			//planned: {severance}*employees + capacity
-			return 0;
+			return EMP_SEVERANCE*employees + capacity;
 		}
 		
 		public function incrementUnits() {

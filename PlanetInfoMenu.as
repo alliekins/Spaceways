@@ -63,12 +63,12 @@
 				menu.hubEmployeesBox.text = hub.employees;
 				menu.hubFreeSpaceBox.text = hub.freeSpace();
 				menu.hubThroughputBox.text = hub.throughput();
-				//menu.hubPackagesProcessed.text
-				//menu.hubUnitsProcessed.text
-				//menu.hubPackagesRefused.text
+				menu.hubPackagesProcessedBox.text = "N/A";
+				menu.hubUnitsProcessedBox.text = "N/A";
+				menu.hubPackagesRefusedBox.text = hub.rejected;
 				menu.hubCostPerMonthBox.text = hub.monthlyCost();
-				//menu.hubIncomePerMonth.text = 
-				//menu.hubProfitsPerMonth.text =
+				menu.hubIncomePerMonthBox.text = "N/A";
+				menu.hubProfitPerMonthBox.text = "N/A";
 				menu.closeSpaceHub.costBox.text = hub.costToClose();
 				
 				menu.closeSpaceHub.addEventListener(MouseEvent.CLICK, submenu_CloseHub);

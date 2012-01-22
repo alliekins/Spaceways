@@ -17,6 +17,20 @@
 		public function getSize():int {
 			return size;
 		}
+		
+		public static function generateRandom():Package {
+			var rand:int = Math.floor(Math.random()*3);
+			switch (rand) {
+				case 0:
+					return new Package(Package.SMALL);
+				case 1:
+					return new Package(Package.MEDIUM);
+				case 2:
+					return new Package(Package.LARGE);
+				default:
+					return new Package(Package.SMALL);
+			}
+		}
 
 	}
 	
