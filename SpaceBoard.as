@@ -21,7 +21,7 @@
 		
 		public function SpaceBoard(myStage:Stage) {
 			this.myStage = myStage;
-			cashOnHand = 5000;
+			cashOnHand = 10000;
 			//make bottom bar
 			bottomBar = new BottomBar();
 			myStage.addChild(bottomBar);
@@ -84,7 +84,7 @@
 		}
 		
 		function adjustCashOnHand(amount:int) {
-			trace("Deducting $" + amount);
+			//trace("Deducting $" + amount);
 			cashOnHand += amount;
 			drawBottomBar();
 		}

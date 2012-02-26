@@ -31,8 +31,9 @@
 		}
 		
 		public function popPackages() {
+			var numPkg:int = 0;
 			if (spaceHub != null) {
-				var numPkg:int = Math.floor(Math.random()*(population/100000000));
+				numPkg = 6; //Math.floor(Math.random()*(population/100000000));
 			}
 			var i:int;
 			for (i=0; i < numPkg; i++) {
@@ -41,7 +42,9 @@
 			if (infomenu != null) {
 				infomenu.updateMenu();
 			}
-			
+			if (spaceHub != null) {
+				trace("Adding " + numPkg + "pkgs to " + pName + "for a total of " + spaceHub.packages.length);
+			}
 		}
 		
 		public function addSpaceHub(sh:SpaceHub):void {

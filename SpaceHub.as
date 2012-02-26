@@ -12,12 +12,13 @@
 		var capacity:int; //capacity of the facility
 		var freightCapable:Boolean = false; //can handle freight?
 		var employees:int; //num employees
-		var packages:Array = new Array(); //packages currently in the facility
+		public var packages:Array //packages currently in the facility
 		public var rejected:int = 0;
 		
 		public function SpaceHub(cap:int, emp:int) {
 			this.capacity = cap;
 			this.employees = emp;
+			this.packages = new Array();
 		}
 		
 		public function addPackage(p:Package) {
